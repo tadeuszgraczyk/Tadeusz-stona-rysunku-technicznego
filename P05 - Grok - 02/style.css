@@ -1,0 +1,12 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+.gradient-bg {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+}
