@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie z rzutowania z pomocą</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f8;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .zadanie {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .zadanie img {
+      max-width: 100%;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+    }
+
+    .text {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+
+    .btn {
+      background-color: #007BFF;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .pomoc {
+      margin-top: 2rem;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      max-width: 800px;
+    }
+
+    .pomoc.active {
+      opacity: 1;
+    }
+
+    iframe {
+      width: 100%;
+      height: 480px;
+      border: none;
+      border-radius: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      iframe {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="zadanie">
+  <img src="https://graczyk.pans.glogow.pl/rys/rys/r00/r01.gif" alt="Zadanie 1">
+  <p class="text">Uzupełnij brakujący rzut</p>
+  <button class="btn">Pomóż rozwiązać</button>
+  <section class="pomoc"></section>
+</section>
+
+<script>
+  const pomoc = document.querySelector('.pomoc');
+  const btn = document.querySelector('.btn');
+
+  btn.addEventListener('click', () => {
+    pomoc.innerHTML = `
+      <div class="sketchfab-embed-wrapper">
+        <iframe title="Model Grupa 1 - 01"
+                allow="autoplay; fullscreen; xr-spatial-tracking"
+                xr-spatial-tracking
+                execution-while-out-of-viewport
+                execution-while-not-rendered
+                web-share
+                src="https://sketchfab.com/models/ee5ca8ace16346529d051b9d4854a174/embed">
+        </iframe>
+        <p style="font-size: 13px; margin-top: 8px; color: #4A4A4A;">
+          <a href="https://sketchfab.com/3d-models/model-grupa-1-01-ee5ca8ace16346529d051b9d4854a174"
+             target="_blank" style="color: #1CAAD9; font-weight: bold;">
+            Model Grupa 1 - 01
+          </a> na platformie <a href="https://sketchfab.com" target="_blank" style="color: #1CAAD9;">Sketchfab</a>
+        </p>
+      </div>
+    `;
+    pomoc.classList.add('active');
+    btn.disabled = true; // opcjonalnie: dezaktywuj przycisk po kliknięciu
+  });
+</script>
+
+</body>
+</html>

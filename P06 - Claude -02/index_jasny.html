@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+      <html lang="pl">
+      <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>TechDraw Academy - Profesjonalne Kursy Rysunku Technicznego</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fafafa;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    .header {
+      background: #fff;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2563eb;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-menu a:hover {
+      color: #2563eb;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 120px 0 80px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #f97316;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(249, 115, 22, 0.6);
+    }
+
+    /* Benefits Section */
+    .benefits {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: #1f2937;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .benefit-card {
+      background: #f8fafc;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid #e2e8f0;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .benefit-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .benefit-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #1f2937;
+    }
+
+    /* About Instructor */
+    .about {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .instructor-photo {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 4rem;
+      margin: 0 auto;
+    }
+
+    .about-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: #1f2937;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #4b5563;
+    }
+
+    /* Materials Section */
+    .materials {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .materials-slider {
+      background: #f8fafc;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-top: 2rem;
+      border: 2px solid #e2e8f0;
+    }
+
+    .slider-content {
+      display: none;
+      text-align: center;
+    }
+
+    .slider-content.active {
+      display: block;
+    }
+
+    .material-preview {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      margin: 1rem 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .slider-nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .slider-btn {
+      padding: 10px 20px;
+      background: #e2e8f0;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .slider-btn.active {
+      background: #2563eb;
+      color: white;
+    }
+
+    /* Pricing */
+    .pricing {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .pricing-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem;
+      border-radius: 20px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .pricing-card.featured {
+      transform: scale(1.05);
+      background: rgba(255,255,255,0.2);
+    }
+
+    .price {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 1rem 0;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin: 2rem 0;
+    }
+
+    .pricing-features li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Contact */
+    .contact {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #f8fafc;
+      padding: 2rem;
+      border-radius: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .form-group textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: #2563eb;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #1d4ed8;
+    }
+
+    /* Footer */
+    .footer {
+      background: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+  <nav class="container">
+    <div class="nav">
+      <div class="logo">TechDraw Academy</div>
+      <ul class="nav-menu">
+        <li><a href="#home">Start</a></li>
+        <li><a href="#benefits">Korzyści</a></li>
+        <li><a href="#about">O mnie</a></li>
+        <li><a href="#materials">Materiały</a></li>
+        <li><a href="#pricing">Cennik</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="container">
+    <h1>Opanuj Rysunek Techniczny</h1>
+    <p>Profesjonalne kursy rysunku technicznego i programów CAD. Od podstaw do zaawansowanego poziomu.</p>
+    <a href="#contact" class="cta-button">Zapisz się na kurs</a>
+  </div>
+</section>
+
+<!-- Benefits Section -->
+<section id="benefits" class="benefits">
+  <div class="container">
+    <h2 class="section-title">Dlaczego warto wybrać nasze kursy?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">📐</div>
+        <h3>Praktyczne podejście</h3>
+        <p>Nauka przez praktyczne zadania i projekty. Każde zajęcia to konkretne umiejętności, które od razu zastosujiesz w pracy.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🎯</div>
+        <h3>Doświadczony instruktor</h3>
+        <p>Lata doświadczenia w nauczaniu rysunku technicznego. Sprawdzone metody i materiały edukacyjne.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💻</div>
+        <h3>Programy CAD</h3>
+        <p>Kompleksowe szkolenie z nowoczesnych programów CAD. Od AutoCAD po zaawansowane narzędzia 3D.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📚</div>
+        <h3>Bogate materiały</h3>
+        <p>Dostęp do biblioteki zadań, przykładów i materiałów pomocniczych. Wszystko w jednym miejscu.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🎓</div>
+        <h3>Certyfikat ukończenia</h3>
+        <p>Otrzymasz certyfikat potwierdzający ukończenie kursu i zdobyte kompetencje.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🤝</div>
+        <h3>Wsparcie po kursie</h3>
+        <p>Dostęp do grupy absolwentów i możliwość konsultacji nawet po zakończeniu kursu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Instructor -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-content">
+      <div class="instructor-photo">TG</div>
+      <div class="about-text">
+        <h2>Tadeusz Graczyk</h2>
+        <p>Doświadczony nauczyciel rysunku technicznego z wieloletnim stażem w edukacji technicznej. Autor licznych materiałów dydaktycznych i zadań praktycznych.</p>
+        <p>Od lat dzielę się wiedzą przez darmowe materiały dostępne online, które pomogły tysiącom uczniów i studentów w opanowaniu rysunku technicznego.</p>
+        <p>Specjalizuję się w:</p>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+          <li>Rysunek techniczny maszynowy</li>
+          <li>Zapis konstrukcji</li>
+          <li>Programy CAD (AutoCAD, SolidWorks)</li>
+          <li>Geometria wykreślna</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Materials Section -->
+<section id="materials" class="materials">
+  <div class="container">
+    <h2 class="section-title">Materiały kursu</h2>
+    <div class="materials-slider">
+      <div class="slider-content active">
+        <h3>Zadania praktyczne</h3>
+        <div class="material-preview">
+          <h4>Przykład: Rzuty prostokątne</h4>
+          <p>Zadania z rzutów prostokątnych - od podstawowych brył do złożonych konstrukcji mechanicznych. Każde zadanie zawiera szczegółowe rozwiązanie krok po kroku.</p>
+          <p><strong>W kursie znajdziesz:</strong></p>
+          <ul style="text-align: left; margin-left: 50px;">
+            <li>50+ zadań praktycznych</li>
+            <li>Rozwiązania krok po kroku</li>
+            <li>Wskazówki i podpowiedzi</li>
+            <li>Warianty o różnej trudności</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slider-content">
+        <h3>Materiały CAD</h3>
+        <div class="material-preview">
+          <h4>AutoCAD od podstaw</h4>
+          <p>Kompleksowe wprowadzenie do AutoCAD - od podstawowych poleceń po zaawansowane techniki modelowania.</p>
+          <p><strong>Program obejmuje:</strong></p>
+          <ul style="text-align: left; margin-left: 50px;">
+            <li>Interfejs i podstawowe polecenia</li>
+            <li>Rysunek 2D i modelowanie 3D</li>
+            <li>Biblioteki bloków i szablony</li>
+            <li>Projektowanie mechaniczne</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slider-content">
+        <h3>Prezentacje i teoria</h3>
+        <div class="material-preview">
+          <h4>Podstawy teoretyczne</h4>
+          <p>Multimedia prezentacje covering all theoretical aspects of technical drawing and construction documentation.</p>
+          <p><strong>Tematy prezentacji:</strong></p>
+          <ul style="text-align: left; margin-left: 50px;">
+            <li>Normy rysunku technicznego</li>
+            <li>Tolerancje i pasowania</li>
+            <li>Oznaczenia materiałów</li>
+            <li>Dokumentacja konstrukcyjna</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slider-nav">
+        <button class="slider-btn active" onclick="showSlide(0)">Zadania</button>
+        <button class="slider-btn" onclick="showSlide(1)">CAD</button>
+        <button class="slider-btn" onclick="showSlide(2)">Teoria</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="pricing">
+  <div class="container">
+    <h2 class="section-title">Cennik kursów</h2>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Kurs podstawowy</h3>
+        <div class="price">799 zł</div>
+        <ul class="pricing-features">
+          <li>20 godzin zajęć</li>
+          <li>Podstawy rysunku technicznego</li>
+          <li>Materiały do pobrania</li>
+          <li>Wsparcie online</li>
+          <li>Certyfikat ukończenia</li>
+        </ul>
+        <a href="#contact" class="cta-button">Wybierz plan</a>
+      </div>
+      <div class="pricing-card featured">
+        <h3>Kurs rozszerzony</h3>
+        <div class="price">1299 zł</div>
+        <ul class="pricing-features">
+          <li>40 godzin zajęć</li>
+          <li>Rysunek + podstawy CAD</li>
+          <li>Wszystkie materiały</li>
+          <li>Projekty praktyczne</li>
+          <li>Wsparcie 3 miesiące</li>
+          <li>Certyfikat + referencje</li>
+        </ul>
+        <a href="#contact" class="cta-button">Najlepszy wybór</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Kurs CAD Pro</h3>
+        <div class="price">1899 zł</div>
+        <ul class="pricing-features">
+          <li>60 godzin zajęć</li>
+          <li>Pełny program CAD</li>
+          <li>AutoCAD + SolidWorks</li>
+          <li>Portfolio projektów</li>
+          <li>Wsparcie 6 miesięcy</li>
+          <li>Pomoc w znalezieniu pracy</li>
+        </ul>
+        <a href="#contact" class="cta-button">Dla profesjonalistów</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+  <div class="container">
+    <h2 class="section-title">Skontaktuj się z nami</h2>
+    <form class="contact-form">
+      <div class="form-group">
+        <label for="name">Imię i nazwisko</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Telefon</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="form-group">
+        <label for="course">Interesujący Cię kurs</label>
+        <select id="course" name="course" style="width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 8px;">
+          <option>Kurs podstawowy</option>
+          <option>Kurs rozszerzony</option>
+          <option>Kurs CAD Pro</option>
+          <option>Konsultacje indywidualne</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Wiadomość</label>
+        <textarea id="message" name="message" placeholder="Opisz swoje oczekiwania i poziom zaawansowania..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Wyślij zapytanie</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 TechDraw Academy. Wszelkie prawa zastrzeżone.</p>
+    <p>Email: kontakt@techdraw-academy.pl | Tel: +48 XXX XXX XXX</p>
+  </div>
+</footer>
+
+<script>
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // Materials slider functionality
+  function showSlide(index) {
+    const slides = document.querySelectorAll('.slider-content');
+    const buttons = document.querySelectorAll('.slider-btn');
+
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+
+    buttons.forEach((btn, i) => {
+      btn.classList.toggle('active', i === index);
+    });
+  }
+
+  // Form submission handler
+  document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Dziękujemy za zainteresowanie! Skontaktujemy się z Tobą w ciągu 24 godzin.');
+  });
+
+  // Header background on scroll
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 100) {
+      header.style.background = 'rgba(255, 255, 255, 0.95)';
+      header.style.backdropFilter = 'blur(10px)';
+    } else {
+      header.style.background = '#fff';
+      header.style.backdropFilter = 'none';
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kurs rysunku technicznego i zapisu konstrukcji. Opanuj sztukę tworzenia profesjonalnych rysunków technicznych z doświadczonym nauczycielem.">
+  <meta name="keywords" content="rysunek techniczny, zapis konstrukcji, kurs rysunku, nauka rysunku technicznego, szkolenia techniczne">
+  <title>Kurs Rysunku Technicznego i Zapisu Konstrukcji</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/heroicons@2.0.13/24/outline/index.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .hover-scale {
+      transition: transform 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: scale(1.05);
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+<!-- Nagłówek -->
+<header class="gradient-bg text-white py-6 sticky top-0 z-50 shadow-lg">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <h1 class="text-3xl font-bold">Kurs Rysunku Technicznego</h1>
+    <!-- Menu desktopowe -->
+    <nav class="hidden md:flex">
+      <ul class="flex space-x-8">
+        <li><a href="#o-kursie" class="hover:underline text-lg">O kursie</a></li>
+        <li><a href="#o-mnie" class="hover:underline text-lg">O mnie</a></li>
+        <li><a href="#materialy" class="hover:underline text-lg">Materiały</a></li>
+        <li><a href="#kontakt" class="hover:underline text-lg">Kontakt</a></li>
+      </ul>
+    </nav>
+    <!-- Przycisk hamburgera dla urządzeń mobilnych -->
+    <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+  <!-- Menu mobilne (ukryte domyślnie) -->
+  <nav id="mobile-menu" class="hidden md:hidden bg-blue-900 text-white">
+    <ul class="flex flex-col space-y-4 px-4 py-6">
+      <li><a href="#o-kursie" class="hover:underline text-lg">O kursie</a></li>
+      <li><a href="#o-mnie" class="hover:underline text-lg">O mnie</a></li>
+      <li><a href="#materialy" class="hover:underline text-lg">Materiały</a></li>
+      <li><a href="#kontakt" class="hover:underline text-lg">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Sekcja powitalna -->
+<section class="gradient-bg text-white py-20 text-center">
+  <div class="container mx-auto px-4">
+    <h2 class="text-5xl font-bold mb-6">Opanuj sztukę rysunku technicznego</h2>
+    <p class="text-xl mb-8 max-w-2xl mx-auto">Dołącz do praktycznego kursu, który nauczy Cię tworzyć profesjonalne rysunki techniczne i zapis konstrukcji pod okiem doświadczonego eksperta.</p>
+    <a href="#kontakt" class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover-scale hover:bg-blue-100">Zapisz się teraz</a>
+  </div>
+</section>
+
+<!-- O kursie -->
+<section id="o-kursie" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold mb-8 text-center text-blue-900">Dlaczego warto wybrać nasz kurs?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md hover-scale">
+        <svg class="w-12 h-12 text-blue-600 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+        <h3 class="text-xl font-semibold mb-2">Praktyczne podejście</h3>
+        <p>Ćwiczenia oparte na rzeczywistych przykładach z branży technicznej.</p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md hover-scale">
+        <svg class="w-12 h-12 text-blue-600 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <h3 class="text-xl font-semibold mb-2">Indywidualne wsparcie</h3>
+        <p>Feedback i wskazówki dostosowane do Twoich potrzeb.</p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md hover-scale">
+        <svg class="w-12 h-12 text-blue-600 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="pointer" data="35" data-vindicator="0"><path d="M9 12l2 2 4-4M7.835 4.697a3.5 3.5 0 001.946-.806 3.5 3.5 0 014.438 0 3.5 3.5 0 001.946.806 3.5 3.5 0 013.138 3.138 3.5 3.5 0 00.806 1.946 3.5 3.5 0 010 4.438 3.5 3.5 0 00-.806 1.946 3.5 3.5 0 01-3.138 3.138 3.5 3.5 0 00-1.946.806 3.5 3.5 0 01-4.438 0 3.5 3.5 0 00-1.946-.806 3.5 3.5 0 01-3.138-3.138 3.5 3.5 0 00-.806-1.946 3.5 3.5 0 010-4.438 3.5 3.5 0 00.806-1.946 3.5 3.5 0 013.138-3.138z"></path></svg>
+        <h3 class="text-xl font-semibold mb-2">Certyfikat ukończenia</h3>
+        <p>Otrzymaj zaświadczenie potwierdzające Twoje umiejętności.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O mnie -->
+<section id="o-mnie" class="py-20 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold mb-6 text-center text-blue-600">Poznaj prowadzącego</h2>
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:w-1/3 mb-6 md:mb-0">
+        <img src="https://graczyk.pans.glogow.pl/img/tedgracz-funko.jpeg" alt="Zdjęcie prowadzącego" class="rounded-full shadow-lg mx-auto">
+      </div>
+      <div class="md:w-2/3 md:pl-8">
+        <p class="text-lg mb-4">Jestem pasjonatem rysunku technicznego z wieloletnim doświadczeniem. Moje darmowe materiały edukacyjne na <a href="https://graczyk.pans.glogow.pl/rys/rys.html" class="text-blue-600 hover:underline">mojej stronie</a> pomogły setkom osób. Na kursie stawiam na praktykę i indywidualne podejście.</p>
+        <p class="text-lg">Dołącz, by pod okiem eksperta opanować rysunek techniczny!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Materiały -->
+<section id="materialy" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold mb-8 text-center text-blue-600">Przykładowe materiały</h2>
+    <p class="text-lg mb-8 text-center max-w-2xl mx-auto">Sprawdź moje darmowe zadania rysunkowe, które pokazują, czego możesz się spodziewać na kursie.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="bg-gray-100 p-4 rounded-lg shadow-md hover-scale">
+        <img src="https://via.placeholder.com/300x200" alt="Rysunek techniczny 1" class="w-full h-40 object-cover rounded-md mb-4">
+        <p class="text-center">Rzut prostokątny</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded-lg shadow-md hover-scale">
+        <img src="https://via.placeholder.com/300x200" alt="Rysunek techniczny 2" class="w-full h-40 object-cover rounded-md mb-4">
+        <p class="text-center">Przekrój poprzeczny</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded-lg shadow-md hover-scale">
+        <img src="https://via.placeholder.com/300x200" alt="Rysunek techniczny 3" class="w-full h-40 object-cover rounded-md mb-4">
+        <p class="text-center">Zapis konstrukcji</p>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div class="text-center mt-8">
+          <a href="https://graczyk.pans.glogow.pl/rys/rys.html" class="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover-scale hover:bg-blue-700">Przeglądaj wszystkie materiały</a>
+        </div>
+      </div>
+</section>
+
+<!-- Kontakt -->
+<section id="kontakt" class="py-20 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold mb-6 text-center text-blue-600">Skontaktuj się</h2>
+    <p class="text-lg mb-4 text-center max-w-2xl mx-auto">Masz pytania lub chcesz się zapisać? Wypełnij formularz!</p>
+    <div class="max-w-md mx-auto">
+      <form action="mailto:twoj.email@example.com" method="post" enctype="text/plain">
+        <div class="mb-6">
+          <label for="name" class="block mb-2 text-lg font-semibold">Imię i nazwisko</label>
+          <input type="text" id="name" name="name" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+        </div>
+        <div class="mb-6">
+          <label for="email" class="block mb-2 text-lg font-semibold">E-mail</label>
+          <input type="email" id="email" name="email" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+        </div>
+        <div class="mb-6">
+          <label for="message" class="block mb-2 text-lg font-semibold">Wiadomość</label>
+          <textarea id="message" name="message" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" rows="5"></textarea>
+        </div>
+        <button type="submit" class="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg w-full hover-scale hover:bg-blue-700">Wyślij wiadomość</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="gradient-bg text-white py-8">
+  <div class="container mx-auto px-4 text-center">
+    <p class="text-lg mb-4">© 2025 Kurs Rysunku Technicznego. Wszelkie prawa zastrzeżone.</p>
+    <p class="mb-4"><a href="mailto:twoj.email@example.com" class="hover:underline">Kontakt: twoj.email@example.com</a></p>
+    <div class="flex justify-center space-x-6">
+      <a href="#" class="hover:underline">Twitter</a>
+      <a href="#" class="hover:underline">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript dla menu i płynnego scrollowania -->
+<script>
+  // Płynne scrollowanie
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+      // Zamknij menu mobilne po kliknięciu
+      document.getElementById('mobile-menu').classList.add('hidden');
+    });
+    // Menu hamburgerowe
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>
